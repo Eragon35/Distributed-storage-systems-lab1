@@ -29,8 +29,6 @@ $$
                                row.tablename, row.tablename, row.tablename)
                     into null_counter;
                 if null_counter > 0
-                    -- lpad с пробелом ничего не делает, вот со * например норм, а с пробелами ******
-                    -- ладно на самом деле он просто выкидывает ведущие пробелы, но всё равно треш
                 then
                     raise notice '% %', lpad(count::text, 3, ' '), row.tablename;
                     count = count + 1;
